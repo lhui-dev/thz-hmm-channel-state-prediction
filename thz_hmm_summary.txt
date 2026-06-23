@@ -1,0 +1,51 @@
+HMM-based THz channel state recognition and prediction
+=======================================================
+
+Hidden states:
+  0: LoS
+  1: NLoS
+  2: Light blockage
+  3: Severe blockage
+
+Observation symbols:
+  0: Excellent
+  1: Good
+  2: Weak
+  3: Outage
+
+Initial distribution pi:
+[0.74 0.16 0.08 0.02]
+
+Transition matrix A:
+[[0.86 0.09 0.04 0.01]
+ [0.18 0.66 0.12 0.04]
+ [0.1  0.24 0.52 0.14]
+ [0.18 0.12 0.28 0.42]]
+
+Emission matrix B:
+[[0.78  0.18  0.035 0.005]
+ [0.12  0.62  0.21  0.05 ]
+ [0.02  0.15  0.62  0.21 ]
+ [0.005 0.04  0.18  0.775]]
+
+Metrics:
+  recognition_accuracy: 0.7378
+  prediction_accuracy: 0.5784
+  blockage_prediction_precision: 0.5969
+  blockage_prediction_recall: 0.3909
+  risk_threshold: 0.3000
+  risk_warning_accuracy: 0.7909
+  risk_warning_precision: 0.5190
+  risk_warning_recall: 0.6244
+  risk_warning_false_alarm_rate: 0.1624
+  severe_blockage_recognition_accuracy: 0.6212
+  los_ratio: 0.4744
+  nlos_ratio: 0.3067
+  light_blockage_ratio: 0.1456
+  severe_blockage_ratio: 0.0733
+
+Confusion matrix, rows=true state, columns=decoded state:
+[[369  54   3   1]
+ [ 48 201  25   2]
+ [ 13  48  53  17]
+ [  1   7  17  41]]
